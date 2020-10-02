@@ -1,0 +1,22 @@
+{
+  "name": "virtual-fireplace",
+  "version": "1.0.0",
+  "description": "A virtual fireplace sample to demonstrate an Alexa Smart Home skill",
+  "main": "fireplace.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js",
+    "start": "webpack-dev-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "amazon-sl",
+  "dependencies": {
+    "aws-sdk": "^2.439.0",
+    "three": "^0.115.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

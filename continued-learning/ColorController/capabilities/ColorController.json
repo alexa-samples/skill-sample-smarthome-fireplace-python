@@ -1,0 +1,16 @@
+[
+  {
+    "type": "AlexaInterface",
+    "interface": "Alexa.ColorController",
+    "version": "3",
+    "properties": {
+      "supported": [
+        {
+          "name": "color"
+        }
+      ],
+      "proactivelyReported": true,
+      "retrievable": true
+    }
+  }
+]

@@ -1,0 +1,186 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Parameters": {
+    "AlexaSkillId": {
+      "Type": "String",
+      "Default": "",
+      "Description": "The Alexa Skill ID."
+    }
+  },
+  "Resources": {
+    "FireplaceEventQueue": {
+      "Type": "AWS::SQS::Queue",
+      "Properties": {
+        "QueueName": "FireplaceEventQueue"
+      }
+    },
+    "FireplaceCognitoRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Federated": "cognito-identity.amazonaws.com"
+              },
+              "Action": "sts:AssumeRoleWithWebIdentity",
+              "Condition": {
+                "StringEquals": {
+                  "cognito-identity.amazonaws.com:aud": {
+                    "Ref": "FireplaceCognitoIdentityPool"
+                  }
+                },
+                "ForAnyValue:StringLike": {
+                  "cognito-identity.amazonaws.com:amr": "unauthenticated"
+                }
+              }
+            }
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyName": "skill_sample_python_smarthome_cognito_sqs",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": ["sqs:ReceiveMessage", "sqs:DeleteMessage"],
+                  "Resource": { "Fn::GetAtt": ["FireplaceEventQueue", "Arn"] }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "DependsOn": []
+    },
+    "FireplaceCognitoIdentityPool": {
+      "Type": "AWS::Cognito::IdentityPool",
+      "Properties": {
+        "IdentityPoolName": "FireplaceCognitoIdentityPool",
+        "AllowUnauthenticatedIdentities": true
+      }
+    },
+    "FireplaceCognitoRoleAttachment": {
+      "Type": "AWS::Cognito::IdentityPoolRoleAttachment",
+      "Properties": {
+        "IdentityPoolId": { "Ref": "FireplaceCognitoIdentityPool" },
+        "Roles": {
+          "unauthenticated": { "Fn::GetAtt": ["FireplaceCognitoRole", "Arn"] }
+        }
+      }
+    },
+    "FireplaceFunctionExecutionRole": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Principal": {
+                "Service": ["lambda.amazonaws.com"]
+              },
+              "Action": ["sts:AssumeRole"]
+            }
+          ]
+        },
+        "Policies": [
+          {
+            "PolicyName": "skill-sample-smarthome-fireplace-python-policy",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Action": [
+                    "logs:CreateLogStream",
+                    "logs:CreateLogGroup",
+                    "logs:PutLogEvents"
+                  ],
+                  "Resource": "*"
+                },
+                {
+                  "Effect": "Allow",
+                  "Action": ["sqs:SendMessage"],
+                  "Resource": { "Fn::GetAtt": ["FireplaceEventQueue", "Arn"] }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "DependsOn": []
+    },
+    "FireplaceFunction": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Runtime": "python3.7",
+        "Handler": "index.lambda_handler",
+        "FunctionName": "skill-sample-smarthome-fireplace-python",
+        "Code": {
+          "ZipFile": {
+            "Fn::Join": [
+              "\n",
+              [
+                "import json",
+                "def lambda_handler(event, context):",
+                "    return {",
+                "        'statusCode': 200,",
+                "        'body': json.dumps('Hello World!')",
+                "    }"
+              ]
+            ]
+          }
+        },
+        "Role": {
+          "Fn::GetAtt": ["FireplaceFunctionExecutionRole", "Arn"]
+        }
+      },
+      "DependsOn": []
+    },
+    "FireplaceFunctionPermissionSH": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "EventSourceToken": {
+          "Ref": "AlexaSkillId"
+        },
+        "FunctionName": {
+          "Fn::GetAtt": ["FireplaceFunction", "Arn"]
+        },
+        "Principal": "alexa-connectedhome.amazon.com"
+      }
+    }
+  },
+  "Outputs": {
+    "FireplaceFunctionLambdaArn": {
+      "Description": "The Alexa Skill Lambda ARN of the Fireplace function.",
+      "Value": {
+        "Fn::GetAtt": ["FireplaceFunction", "Arn"]
+      },
+      "Export": {
+        "Name": "fireplace-function-lambda-arn"
+      }
+    },
+    "FireplaceCognitoIdentityPool": {
+      "Description": "The Cognito Identity pool that allows access to the Amazon SQS queue",
+      "Value": { "Ref": "FireplaceCognitoIdentityPool" },
+      "Export": {
+        "Name": "fireplace-cognito-identity-pool"
+      }
+    },
+    "FireplaceSqsQueueUrl": {
+      "Description": "The URL for the Amazon SQS Queue",
+      "Value": {
+        "Ref": "FireplaceEventQueue"
+      },
+      "Export": {
+        "Name": "fireplace-event-queue-url"
+      }
+    }
+  }
+}

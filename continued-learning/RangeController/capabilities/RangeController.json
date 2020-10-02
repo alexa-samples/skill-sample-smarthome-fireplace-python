@@ -1,0 +1,109 @@
+[
+  {
+    "type": "AlexaInterface",
+    "interface": "Alexa.RangeController",
+    "instance": "Fireplace.Burners",
+    "version": "3",
+    "properties": {
+      "supported": [
+        {
+          "name": "rangeValue"
+        }
+      ],
+      "proactivelyReported": true,
+      "retrievable": true,
+      "nonControllable": false
+    },
+    "capabilityResources": {
+      "friendlyNames": [
+        {
+          "@type": "asset",
+          "value": {
+            "assetId": "Alexa.Setting.Preset"
+          }
+        }
+      ]
+    },
+    "configuration": {
+      "supportedRange": {
+        "minimumValue": 1,
+        "maximumValue": 3,
+        "precision": 1
+      },
+      "presets": [
+        {
+          "rangeValue": 1,
+          "presetResources": {
+            "friendlyNames": [
+              {
+                "@type": "asset",
+                "value": {
+                  "assetId": "Alexa.Value.Low"
+                }
+              },
+              {
+                "@type": "asset",
+                "value": {
+                  "assetId": "Alexa.Value.Minimum"
+                }
+              },
+              {
+                "@type": "text",
+                "value": {
+                  "text": "lowest",
+                  "locale": "en-US"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "rangeValue": 2,
+          "presetResources": {
+            "friendlyNames": [
+              {
+                "@type": "asset",
+                "value": {
+                  "assetId": "Alexa.Value.Medium"
+                }
+              },
+              {
+                "@type": "text",
+                "value": {
+                  "text": "normal",
+                  "locale": "en-US"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "rangeValue": 3,
+          "presetResources": {
+            "friendlyNames": [
+              {
+                "@type": "asset",
+                "value": {
+                  "assetId": "Alexa.Value.Maximum"
+                }
+              },
+              {
+                "@type": "asset",
+                "value": {
+                  "assetId": "Alexa.Value.High"
+                }
+              },
+              {
+                "@type": "text",
+                "value": {
+                  "text": "highest",
+                  "locale": "en-US"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

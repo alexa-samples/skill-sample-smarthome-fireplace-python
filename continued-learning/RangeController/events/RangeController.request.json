@@ -1,0 +1,23 @@
+{
+  "directive": {
+    "header": {
+      "namespace": "Alexa.RangeController",
+      "instance": "Fireplace.Burners",
+      "name": "SetRangeValue",
+      "messageId": "<message id>",
+      "correlationToken": "<an opaque correlation token>",
+      "payloadVersion": "3"
+    },
+    "endpoint": {
+      "scope": {
+        "type": "BearerToken",
+        "token": "<an OAuth2 bearer token>"
+      },
+      "endpointId": "fireplace-01",
+      "cookie": {}
+    },
+    "payload": {
+      "rangeValue": 3
+    }
+  }
+}

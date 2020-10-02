@@ -1,0 +1,185 @@
+[
+  {
+    "type": "AlexaInterface",
+    "interface": "Alexa.ModeController",
+    "instance": "Fireplace.FlameType",
+    "version": "3",
+    "properties": {
+      "supported": [
+        {
+          "name": "mode"
+        }
+      ],
+      "retrievable": true,
+      "proactivelyReported": true,
+      "nonControllable": false
+    },
+    "capabilityResources": {
+      "friendlyNames": [
+        {
+          "@type": "text",
+          "value": {
+            "text": "flame type",
+            "locale": "en-US"
+          }
+        },
+        {
+          "@type": "text",
+          "value": {
+            "text": "flame",
+            "locale": "en-US"
+          }
+        }
+      ]
+    },
+    "configuration": {
+      "ordered": false,
+      "supportedModes": [
+        {
+          "value": "FlameType.Campfire",
+          "modeResources": {
+            "friendlyNames": [
+              {
+                "@type": "text",
+                "value": {
+                  "text": "normal",
+                  "locale": "en-US"
+                }
+              },
+              {
+                "@type": "text",
+                "value": {
+                  "text": "campfire",
+                  "locale": "en-US"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "value": "FlameType.Candle",
+          "modeResources": {
+            "friendlyNames": [
+              {
+                "@type": "text",
+                "value": {
+                  "text": "candle",
+                  "locale": "en-US"
+                }
+              },
+              {
+                "@type": "text",
+                "value": {
+                  "text": "candle light",
+                  "locale": "en-US"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "value": "FlameType.IceFlame",
+          "modeResources": {
+            "friendlyNames": [
+              {
+                "@type": "text",
+                "value": {
+                  "text": "ice mode",
+                  "locale": "en-US"
+                }
+              },
+              {
+                "@type": "text",
+                "value": {
+                  "text": "ice flame",
+                  "locale": "en-US"
+                }
+              },
+              {
+                "@type": "text",
+                "value": {
+                  "text": "ice",
+                  "locale": "en-US"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  {
+    "type": "AlexaInterface",
+    "interface": "Alexa.ModeController",
+    "instance": "Fireplace.CurrentFlameType",
+    "version": "3",
+    "properties": {
+      "supported": [
+        {
+          "name": "mode"
+        }
+      ],
+      "retrievable": true,
+      "proactivelyReported": true,
+      "nonControllable": true
+    },
+    "capabilityResources": {
+      "friendlyNames": [
+        {
+          "@type": "text",
+          "value": {
+            "text": "current flame type",
+            "locale": "en-US"
+          }
+        }
+      ]
+    },
+    "configuration": {
+      "ordered": false,
+      "supportedModes": [
+        {
+          "value": "CurrentFlameType.Campfire",
+          "modeResources": {
+            "friendlyNames": [
+              {
+                "@type": "text",
+                "value": {
+                  "text": "campfire",
+                  "locale": "en-US"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "value": "CurrentFlameType.Candle",
+          "modeResources": {
+            "friendlyNames": [
+              {
+                "@type": "text",
+                "value": {
+                  "text": "candle",
+                  "locale": "en-US"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "value": "CurrentFlameType.Ice",
+          "modeResources": {
+            "friendlyNames": [
+              {
+                "@type": "text",
+                "value": {
+                  "text": "ice",
+                  "locale": "en-US"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+]

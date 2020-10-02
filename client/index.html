@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;300;500&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    html {
+      background: url(img/fireplace-night-sky.png) no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+
+    #gui {
+      position: absolute;
+      top: 11px;
+      right: 40px;
+      text-align: right;
+    }
+
+    #gui h1 {
+      font-family: 'Roboto Mono', monospace;
+      color: #e6e6e6;
+      font-size: 15px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    #gui h2 {
+      font-family: 'Roboto Mono', monospace;
+      color: #c6c6c6;
+      font-size: 14px;
+      font-weight: 300;
+      text-transform: uppercase;
+      text-decoration: underline;
+    }
+
+    #gui p {
+      font-family: 'Roboto Mono', monospace;
+      color: #ffd586;
+      font-size: 13px;
+      font-weight: 200;
+    }
+
+    code {
+      color: #ffd586;
+      font-size: 12px;
+      font-weight: 100;
+    }
+
+    .dot {
+      height: 7px;
+      width: 7px;
+      background-color: rgb(23, 167, 23);
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    #api-payload pre {
+      text-align: right;
+    }
+  </style>
+  <title>Alexa Smart Home API: Virtual Fireplace</title>
+</head>
+
+<body class="bg-nightsky">
+  <script src="public/app.js"></script>
+  <div id="gui">
+    <h1>ALEXA SMART HOME API: VIRTUAL FIREPLACE</h1>
+    <h2>Current Smart Home API Interface</h2>
+    <p id="api-interface">N/A</p>
+    <h2>Current State</h2>
+    <p id="api-state">Ready <span class="dot"></span></p>
+    <h2>Directive Payload</h2>
+    <p id="api-directive-payload">N/A</p>
+  </div>
+</body>
+
+</html>

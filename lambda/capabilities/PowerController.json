@@ -1,0 +1,17 @@
+[
+    {
+      "type": "AlexaInterface",
+      "interface": "Alexa.PowerController",
+      "version": "3",
+      "properties": {
+        "supported": [
+          {
+            "name": "powerState"
+          }
+        ],
+        "proactivelyReported": true,
+        "retrievable": true
+      }
+    }
+  ]
+  
