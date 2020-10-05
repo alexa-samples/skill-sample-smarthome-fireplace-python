@@ -137,17 +137,20 @@ def lambda_handler(request, context):
 
     if namespace == 'Alexa.RangeController':
         # Continue your learning!
-        # https://github.com/alexa/skill-sample-smarthome-fireplace-python/continued-learning/RangeController/
+        # You can implement Alexa.RangeController for your virtual fireplace via 
+        #   https://github.com/alexa/skill-sample-smarthome-fireplace-python/tree/main/continued-learning/RangeController
         pass
 
     if namespace == 'Alexa.ColorController':
         # Continue your learning!
-        # https://github.com/alexa/skill-sample-smarthome-fireplace-python/continued-learning/ColorController/
+        # You can implement Alexa.ColorController for your virtual fireplace via 
+        #   https://github.com/alexa/skill-sample-smarthome-fireplace-python/tree/main/continued-learning/ColorController
         pass
     
     if namespace == 'Alexa.ModeController':
         # Continue your learning!
-        # https://github.com/alexa/skill-sample-smarthome-fireplace-python/continued-learning/ModeController/
+        # You can implement Alexa.ModeController for your virtual fireplace via 
+        #   https://github.com/alexa/skill-sample-smarthome-fireplace-python/tree/main/continued-learning/ModeController
         pass
 
 def send_device_state_message(opts={}):

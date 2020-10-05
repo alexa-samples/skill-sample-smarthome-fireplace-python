@@ -58,7 +58,8 @@ There are placeholder comments for various capabilities. Look for the code block
 ```
 if namespace == 'Alexa.ModeController':
     # Continue your learning!
-    # You can implement Alexa.ModeController for your virtual fireplace via https://github.com/alexa/skill-sample-smarthome-fireplace-python/continued-learning/ModeController/
+    # You can implement Alexa.ModeController for your virtual fireplace via 
+    #   https://github.com/alexa/skill-sample-smarthome-fireplace-python/tree/main/continued-learning/ModeController
     pass
 ```
 
