@@ -22,9 +22,9 @@ To start this sample, follow the [instructions](./instructions/README.md).
 * [Steps to Build a Smart Home Skill](https://developer.amazon.com/en-US/docs/alexa/smarthome/steps-to-build-a-smart-home-skill.html)
 * [Add Custom Voice Interaction to a Smart Home Skill](https://developer.amazon.com/docs/smarthome/add-custom-voice-interaction-to-a-smart-home-skill.html)
 
-### Virtual Fireplace
+### Particle Fire
 
-[Three.js WebGL Fire and Smoke Demo](https://threejs.org/examples/webgl_fire.html)
+[Three particle fire](https://github.com/yomotsu/three-particle-fire)
 
 ## Security
 
