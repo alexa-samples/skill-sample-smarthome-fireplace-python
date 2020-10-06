@@ -20,7 +20,6 @@ To start this sample, follow the [instructions](./instructions/README.md).
 
 * [Understand the Smart Home Skill API](https://developer.amazon.com/en-US/docs/alexa/smarthome/understand-the-smart-home-skill-api.html)
 * [Steps to Build a Smart Home Skill](https://developer.amazon.com/en-US/docs/alexa/smarthome/steps-to-build-a-smart-home-skill.html)
-* [Add Custom Voice Interaction to a Smart Home Skill](https://developer.amazon.com/docs/smarthome/add-custom-voice-interaction-to-a-smart-home-skill.html)
 
 ### Particle Fire
 
