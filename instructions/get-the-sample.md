@@ -6,12 +6,9 @@ Follow either of the steps below to get the sample code.
 
 1. Run the following command to clone the sample:
 ```
-git clone https://github.com/jbnunn/skill-sample-smarthome-fireplace-python
+git clone git@github.com:alexa/skill-sample-smarthome-fireplace-python.git
 ```
-or
-```
-git clone git@github.com:jbnunn/skill-sample-smarthome-fireplace-python.git
-```
+
 2. Once the clone is complete, you should have a folder named *skill-sample-smarthome-fireplace-python* in your working directory.
 
 ## Option 2: Download the Sample Code from GitHub
