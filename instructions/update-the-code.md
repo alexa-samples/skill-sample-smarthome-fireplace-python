@@ -42,7 +42,7 @@ Edit the handler code to enable sending a message to your queue.
 
     ![](./img/deploy.png)
 
-## Test the code
+## Test the code`
 
 In this section, you’ll test the changes to the handler code by simulating an Alexa Request for a Smart Home message:
 
@@ -67,7 +67,7 @@ Any errors with the code or packaging and deployment of the code will be reflect
 
 #### PowerController Event (Optional)
 
-Repeat the same steps above to create a test event for an `Alexa.PowerController` directive from Alexa. For the _Event name_ enter `directivePower`. Copy and paste the contents of [PowerController.request.json](./lambda/events/PowerController.request.json) into the text field at the bottom of the dialog, replacing its contents, then click the **Create** button.
+Repeat the same steps above to create a test event for an `Alexa.PowerController` directive from Alexa. For the _Event name_ enter `directivePower`. Copy and paste the contents of [PowerController.request.json](https://github.com/alexa/skill-sample-smarthome-fireplace-python/blob/main/lambda/events/PowerController.request.json) into the text field at the bottom of the dialog, replacing its contents, then click the **Create** button.
 
 With the **directivePower** test selected in the dropdown, click **Test**, and inspect the execution result to find a successful "TurnOn" event.
 
