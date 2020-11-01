@@ -53,7 +53,7 @@ In this section, you’ll test the changes to the handler code by simulating an 
 1. On the function page for _skill-sample-smarthome-fireplace-python_, select the **Select a test event** dropdown from the top menu of the function and click **Configure test events**.
 2. In the dialog that opens, leave **Create new test event** selected and leave the default template.
 3. For the _Event name_ enter: `directiveDiscovery`.
-4. Copy and paste the contents of [Discovery.request.json](./lambda/events/Discovery.request.json) into the text field at the bottom of the dialog, replacing its contents.
+4. Copy and paste the contents of [Discovery.request.json](https://github.com/alexa/skill-sample-smarthome-fireplace-python/blob/main/lambda/events/Discovery.request.json) into the text field at the bottom of the dialog, replacing its contents.
 
     ![](./img/configure-test-event.png)
 
