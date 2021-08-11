@@ -1,6 +1,6 @@
 # Skill Sample: Smart Home Fireplace (Python)
 
-This is an Alexa skill sample designed to help you understand the capability interfaces of the Smart Home Skill API. You will build a smart home appliance (a virtual fireplace) to implement and understand the Smart Home Skill APIs.
+This is an Alexa skill sample designed to help you understand the capability interfaces of the Smart Home Skill API. You will build a Smart Home appliance (a virtual fireplace) to implement and understand the Smart Home Skill APIs.
 
 ![](./instructions/img/fireplace.gif)
 
