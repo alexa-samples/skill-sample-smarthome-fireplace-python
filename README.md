@@ -4,7 +4,7 @@ This is an Alexa skill sample designed to help you understand the capability int
 
 ![](./instructions/img/fireplace.gif)
 
-At the end of this tutorial, you will have an Alexa skill and a supporting AWS backend that responds to commands for Smart Home interaction models. This virtual fireplace will respond to the [PowerController interface](https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-powercontroller.html) of the Smart Home Skill API, and serve as a base skill from which you can add additional functionality via a series of related Alexa cookbook recipes.
+At the end of this tutorial, you will have an Alexa skill and a supporting AWS backend that responds to commands for Smart Home interaction models. This virtual fireplace will respond to the [PowerController interface](https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-powercontroller.html) of the Smart Home Skill API, and serve as a base skill from which you can add additional functionality via a series of related Alexa code samples.
 
 To start this sample, follow the [instructions](./instructions/README.md).
 
